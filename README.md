@@ -1,28 +1,26 @@
-# mscape-template
+# Contamination
 
-This repository is a template for creating new repositories containing  
-code that will run on mSCAPE. It serves as a guide for code layout  
-and files will need amending to fit the repo purpose.  
+WIP - 
+This repo is a Work in Progress. I have decided to split the previous 'contamination-data' codebase into two - 
+- Python
+- NextFlow
+This way the Python can be separate, tested and run locally (with some helper scripts to download the data needed.) Then
+once ready, it can be packaged up into a NextFlow pipeline when we know how/when we want to run it. 
 
-As a minimum, mSCAPE repositories should include the following:
-- Code to be in src/ layout 
-- tests/ folder at same level as src/ 
-- .github/ folder containing workflows and a pull request template
-- .gitignore file
-- pyproject.toml file
-- .pre-commit-hooks.yaml
+## What is this code base and what is its purpose?
 
-This repo follows the above structure and contains examples of the files  
-referenced above.
+`Contamination` is a python-based tool that gathers, handles and plots data from the negative control samples in mSCAPE, 
+and produces reports. There are summary reports and site-based reports. The reports contain a number of plots that look
+at the composition of the negative controls. 
 
-A ssuggested layout for repo READMEs is included below. The guidance  
-documentation contains further information on required repository  
-structure, development cycles, and making pull requests. Please read  
-this guidance document before using the template.
-
-# mscape-template
-
-Brief description of project here
+In an ideal world, these negative controls would be water or diluent, free of microorganisms. In reality, negative 
+controls, when included in nucleic acod extraction and sequencing runs, tend to reflect a number of sources of microbes 
+that did not originate in the samples - i.e _contamination_. 
+Possible sources include:
+- human (the person handling the samples)
+- environment (introduced during the processes)
+- reagent (kitome)
+- environment (other reagents or equipment)
 
 ## Installation
 
@@ -30,18 +28,18 @@ Add installation instructions here. Ideally include commands to make
 the process as easy as possible for users.  
 
 Clone repo and create environment:  
-`git clone git@github.com:ukhsa-collaboration/mscape-template.git`  
+`git clone git@github.com:ukhsa-collaboration/gpha-mscape-contamination.git`  
 
-`conda env create -n mscape_template `  
+`conda env create -n contamination `  
 
-`conda activate mscape_template`  
+`conda activate contamination`  
 
 Installation for users:  
-`cd mscape-template`  
+`cd gpha-mscape-contamination`  
 `pip install .`
 
 Installation for developers (installs code in editable mode):  
-`cd mscape-template`  
+`cd gpha-mscape-contamination`  
 `pip install --editable '.[dev]'`
 
 ## Usage
